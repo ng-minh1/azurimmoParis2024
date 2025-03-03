@@ -4,8 +4,12 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AttachMoney
 import androidx.compose.material.icons.filled.Business
 import androidx.compose.material.icons.filled.Description
+import androidx.compose.material.icons.filled.Event
+import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.Newspaper
 import androidx.compose.material.icons.filled.Person
+import androidx.compose.material.icons.filled.SportsHandball
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -22,11 +26,11 @@ import androidx.navigation.NavController
 fun AppBottomBar(navController: NavController) {
 
     val items = listOf(
-        BottomNavItem("Bâtiments", "batiments_list", Icons.Filled.Business),
-        BottomNavItem("Appts", "appartements_list", Icons.Filled.Home),
-        BottomNavItem("Contrats", "contrats_list", Icons.Filled.Description),
-        BottomNavItem("Locataires", "locataires_list", Icons.Filled.Person),
-        BottomNavItem("Paiements", "paiements_list", Icons.Filled.AttachMoney)
+        BottomNavItem("Actu", "actualites_list", Icons.Filled.Newspaper),
+        BottomNavItem("Athlètes", "batiments_list", Icons.Filled.Person),
+        BottomNavItem("Epreuves", "epreuves_list", Icons.Filled.Event),
+        BottomNavItem("Pays", "pays_list", Icons.Filled.Flag),
+        BottomNavItem("Sport", "sports_list", Icons.Filled.SportsHandball)
     )
 
     var selectedItem by remember { mutableStateOf(0) }

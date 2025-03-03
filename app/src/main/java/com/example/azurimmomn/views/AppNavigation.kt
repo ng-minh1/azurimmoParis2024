@@ -6,6 +6,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.compose.ui.Modifier
+import com.example.azurimmomn.views.athlete.AthleteList
 
 @Composable
 fun AppNavigation(navController: NavHostController, modifier: Modifier = Modifier) {
@@ -14,20 +15,20 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier = Modifie
         startDestination = "batiments_list",
         modifier = modifier
     ) {
+        composable("actualites_list") {
+            Text("Page Actualités")
+        }
         composable("batiments_list") {
-            Text("Page batiments")
+            AthleteList()
         }
-        composable("appartements_list") {
-            Text("Page appartements")
+        composable("epreuves_list") {
+            Text("Page Epreuves")
         }
-        composable("contrats_list") {
-            Text("Page contrats")
+        composable("pays_list") {
+            Text("Page Pays")
         }
-        composable("locataires_list") {
-            Text("Page locataires")
-        }
-        composable("paiements_list") {
-            Text("Page paiements")
+        composable("sports_list") {
+            Text("Page Sports")
         }
     }
 }
