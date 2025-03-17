@@ -12,6 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Text
 import androidx.compose.material3.MaterialTheme
+import java.time.format.DateTimeFormatter
 
 
 @Composable
@@ -26,9 +27,13 @@ fun AthleteCard(athlete: Athlete) {
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
+            val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
+
+
             Text(text = athlete.nom, style = MaterialTheme.typography.bodyLarge)
             Text(text = athlete.prenom, style = MaterialTheme.typography.bodyMedium)
-            Text(text = athlete.dateNaiss, style = MaterialTheme.typography.bodyMedium)
+            Text(text = athlete.dateNaiss.format(formatter), style = MaterialTheme.typography.bodyMedium)
+
 
         }
     }
