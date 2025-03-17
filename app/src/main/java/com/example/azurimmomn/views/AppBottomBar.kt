@@ -1,12 +1,8 @@
 package com.example.azurimmomn.views
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AttachMoney
-import androidx.compose.material.icons.filled.Business
-import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Event
 import androidx.compose.material.icons.filled.Flag
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Newspaper
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.SportsHandball
