@@ -28,6 +28,8 @@ fun AthleteCard(athlete: Athlete) {
         ) {
             Text(text = athlete.nom, style = MaterialTheme.typography.bodyLarge)
             Text(text = athlete.prenom, style = MaterialTheme.typography.bodyMedium)
+            Text(text = athlete.dateNaiss, style = MaterialTheme.typography.bodyMedium)
+
         }
     }
 }

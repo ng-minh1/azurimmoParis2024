@@ -1,12 +1,8 @@
 package com.example.azurimmomn.views
 
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.AttachMoney
-import androidx.compose.material.icons.filled.Business
-import androidx.compose.material.icons.filled.Description
 import androidx.compose.material.icons.filled.Event
 import androidx.compose.material.icons.filled.Flag
-import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Newspaper
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.SportsHandball
@@ -27,7 +23,7 @@ fun AppBottomBar(navController: NavController) {
 
     val items = listOf(
         BottomNavItem("Actu", "actualites_list", Icons.Filled.Newspaper),
-        BottomNavItem("Athlètes", "batiments_list", Icons.Filled.Person),
+        BottomNavItem("Athlètes", "athletes_list", Icons.Filled.Person),
         BottomNavItem("Epreuves", "epreuves_list", Icons.Filled.Event),
         BottomNavItem("Pays", "pays_list", Icons.Filled.Flag),
         BottomNavItem("Sport", "sports_list", Icons.Filled.SportsHandball)
