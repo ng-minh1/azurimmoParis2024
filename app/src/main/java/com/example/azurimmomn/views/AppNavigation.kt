@@ -16,7 +16,7 @@ import com.example.azurimmomn.views.sport.SportList
 fun AppNavigation(navController: NavHostController, modifier: Modifier = Modifier) {
     NavHost(
         navController = navController,
-        startDestination = "batiments_list",
+        startDestination = "actualites_list",
         modifier = modifier
     ) {
         composable("actualites_list") {
