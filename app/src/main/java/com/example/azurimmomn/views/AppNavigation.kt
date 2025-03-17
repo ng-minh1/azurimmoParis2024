@@ -22,7 +22,7 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier = Modifie
         composable("actualites_list") {
             ActualiteList()
         }
-        composable("batiments_list") {
+        composable("athletes_list") {
             AthleteList()
         }
         composable("epreuves_list") {
