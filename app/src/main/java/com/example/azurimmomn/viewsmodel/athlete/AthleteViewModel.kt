@@ -1,31 +1,45 @@
 package com.example.azurimmomn.viewsmodel.athlete
 
 import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
 import com.example.azurimmomn.model.Athlete
+import androidx.lifecycle.viewModelScope
+import com.example.azurimmomn.api.RetrofitInstance
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.launch
 
 class AthleteViewModel : ViewModel() {
 
-    // Liste mutable des bâtiments
     private val _athletes = MutableStateFlow<List<Athlete>>(emptyList())
     val athletes: StateFlow<List<Athlete>> = _athletes
 
+    private val _isLoading = MutableStateFlow(false)
+    val isLoading: StateFlow<Boolean> = _isLoading
+
+    private val _errorMessage = MutableStateFlow<String?>(null)
+    val errorMessage: StateFlow<String?> = _errorMessage
+
     init {
-        // Simuler un chargement de données initiales
         getAthletes()
     }
 
-    // Fonction pour simuler le chargement de bâtiments
+
     private fun getAthletes() {
         viewModelScope.launch {
-            _athletes.value = listOf(
-                Athlete(1,  "Dupont", "Jean"),
-                Athlete(2,  "Smith", "John"),
-                Athlete(3,  "Tanaka", "Yuki")
-            )
+            _isLoading.value = true
+            _errorMessage.value = null  // Réinitialise l'erreur avant l'appel
+
+            try {
+                val response = RetrofitInstance.api.getAthletes()
+                _athletes.value = response
+            } catch (e: Exception) {
+                _errorMessage.value = "Erreur : ${e.localizedMessage ?: "Une erreur s'est produite"}"
+            } finally {
+                _isLoading.value = false
+                println("Chargement terminé")
+            }
         }
     }
+
+
 }
