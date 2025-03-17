@@ -27,11 +27,11 @@ fun ActualiteCard(actualite: Actualite) {
         Column(
             modifier = Modifier.padding(16.dp)
         ) {
-
+            val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
 
             Text(text = actualite.titre, style = MaterialTheme.typography.bodyLarge)
             Text(text = actualite.contenu, style = MaterialTheme.typography.bodyMedium)
-            Text(text = actualite.date, style = MaterialTheme.typography.bodyMedium)
+            Text(text = actualite.date.format(formatter), style = MaterialTheme.typography.bodyMedium)
 
         }
     }
