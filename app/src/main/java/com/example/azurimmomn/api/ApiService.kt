@@ -5,6 +5,8 @@ import com.example.azurimmomn.model.Athlete
 import com.example.azurimmomn.model.Epreuve
 import com.example.azurimmomn.model.Pays
 import com.example.azurimmomn.model.Sport
+import com.example.azurimmomn.model.Joueur
+
 
 
 import retrofit2.http.GET
@@ -25,4 +27,7 @@ interface ApiService {
 
     @GET("/sports")
     suspend fun getSports(): List<Sport>
+
+    @GET("/joueurs")
+    suspend fun getJoueurs(): List<Joueur>
 }
