@@ -4,6 +4,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Event
 import androidx.compose.material.icons.filled.Flag
 import androidx.compose.material.icons.filled.Newspaper
+import androidx.compose.material.icons.filled.PermContactCalendar
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.SportsHandball
 import androidx.compose.material3.Icon
@@ -26,7 +27,8 @@ fun AppBottomBar(navController: NavController) {
         BottomNavItem("Athlètes", "athletes_list", Icons.Filled.Person),
         BottomNavItem("Epreuves", "epreuves_list", Icons.Filled.Event),
         BottomNavItem("Pays", "pays_list", Icons.Filled.Flag),
-        BottomNavItem("Sport", "sports_list", Icons.Filled.SportsHandball)
+        BottomNavItem("Sport", "sports_list", Icons.Filled.SportsHandball),
+        BottomNavItem("Joueur", "joueurs_list", Icons.Filled.PermContactCalendar)
     )
 
     var selectedItem by remember { mutableStateOf(0) }
