@@ -3,10 +3,10 @@ package com.example.azurimmomn.model
 import java.time.LocalDate
 
 
-class Joueur {
+class Joueur (
     val id: Int,
     val nom: String,
     val prenom: String,
-    val dateNaiss: LocalDate,
-
-}
+    val datenaiss: LocalDate,
+    val sport: Sport,
+    )
