@@ -22,7 +22,7 @@ fun AppHeader() {
             .padding(vertical = 16.dp)
     ) {
         Text(
-            text = "AzurimmoMN",
+            text = "Paris2024",
             style = MaterialTheme.typography.titleLarge.copy(
                 color = Color.White,
                 fontWeight = FontWeight.Bold
