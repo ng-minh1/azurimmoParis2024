@@ -17,7 +17,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AzurimmoMN"
         tools:targetApi="31">
-        <!-- Autres configurations de l'application -->>
         <activity
             android:name=".MainActivity"
             android:exported="true"
