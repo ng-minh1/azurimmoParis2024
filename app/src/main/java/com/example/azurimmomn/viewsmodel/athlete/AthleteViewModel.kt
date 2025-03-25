@@ -19,12 +19,12 @@ class AthleteViewModel : ViewModel() {
     private val _errorMessage = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = _errorMessage
 
-    init {
+    /*init {
         getAthletes()
-    }
+    }*/
 
 
-    private fun getAthletes() {
+     fun getAthletes() {
         viewModelScope.launch {
             _isLoading.value = true
             _errorMessage.value = null  // Réinitialise l'erreur avant l'appel
@@ -37,6 +37,23 @@ class AthleteViewModel : ViewModel() {
             } finally {
                 _isLoading.value = false
                 println("Chargement terminé")
+            }
+        }
+    }
+
+    fun getAthletesBySport(sportId: Int) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            _errorMessage.value = null  // Réinitialise l'erreur avant l'appel
+            try {
+                val response = RetrofitInstance.api.getAthletesBySportId(sportId)
+                _athletes.value = response
+
+            } catch (e: Exception) {
+                _errorMessage.value = "Erreur : ${e.localizedMessage ?: "Une erreur s'est produite"}"
+            } finally {
+                _isLoading.value = false
+                println("Chargement des appartements du batiment selectionné terminé" + sportId )
             }
         }
     }
