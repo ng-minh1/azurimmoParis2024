@@ -29,10 +29,12 @@ fun JoueurCard(joueur: Joueur) {
         ) {
             val formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy")
 
-            Text(text = joueur.nom, style = MaterialTheme.typography.bodyLarge)
-            Text(text = joueur.prenom, style = MaterialTheme.typography.bodyMedium)
-            Text(text = joueur.datenaiss.format(formatter), style = MaterialTheme.typography.bodyMedium)
-            Text(text = "${joueur.sport.nom}", style = MaterialTheme.typography.bodyMedium)
+            Text(text = " ${joueur.nom} ${joueur.prenom}", style = MaterialTheme.typography.bodyLarge)
+
+            Text(text = "Date de naissance : ${joueur.datenaiss.format(formatter)} ", style = MaterialTheme.typography.bodyMedium)
+            Text(text = "Sport favori : ${joueur.sport.nom}", style = MaterialTheme.typography.bodyMedium)
+            Text(text = "Niveau : ${joueur.niveau.libelle}", style = MaterialTheme.typography.bodyMedium)
+
 
 
 
