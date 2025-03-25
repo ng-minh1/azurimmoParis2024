@@ -19,6 +19,9 @@ class SportViewModel : ViewModel() {
     private val _errorMessage = MutableStateFlow<String?>(null)
     val errorMessage: StateFlow<String?> = _errorMessage
 
+    private val _sport = MutableStateFlow<Sport?>(null)
+    val sport: StateFlow<Sport?> = _sport
+
     init {
         getSports()
     }
@@ -41,5 +44,21 @@ class SportViewModel : ViewModel() {
         }
     }
 
+    fun getSport(sportId: Int) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            _errorMessage.value = null  // Réinitialise l'erreur avant l'appel
+
+            try {
+                val response = RetrofitInstance.api.getSport(sportId)
+                _sport.value = response.body()
+            } catch (e: Exception) {
+                _errorMessage.value = "Erreur : ${e.localizedMessage ?: "Une erreur s'est produite"}"
+            } finally {
+                _isLoading.value = false
+                println("Chargement du batiment terminé")
+            }
+        }
+    }
 
 }

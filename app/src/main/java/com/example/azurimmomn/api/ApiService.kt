@@ -10,6 +10,7 @@ import com.example.azurimmomn.model.Joueur
 
 
 import retrofit2.http.GET
+import retrofit2.http.Path
 
 
 interface ApiService {
@@ -30,4 +31,11 @@ interface ApiService {
 
     @GET("/joueurs")
     suspend fun getJoueurs(): List<Joueur>
+
+    @GET("/athletes/sport/{sportId}")
+    suspend fun getAthletesBySportId(@Path("sportId") sportId: Int): List<Athlete>
+
+    @GET("/sport/{id}")
+    suspend fun getSport(@Path("id") id: Int): retrofit2.Response<Sport>
+
 }
