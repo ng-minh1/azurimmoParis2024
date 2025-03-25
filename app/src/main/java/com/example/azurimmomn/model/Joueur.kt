@@ -9,4 +9,5 @@ class Joueur (
     val prenom: String,
     val datenaiss: LocalDate,
     val sport: Sport,
+    val niveau: Niveau,
     )
