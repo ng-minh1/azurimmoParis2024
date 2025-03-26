@@ -56,9 +56,30 @@ class SportViewModel : ViewModel() {
                 _errorMessage.value = "Erreur : ${e.localizedMessage ?: "Une erreur s'est produite"}"
             } finally {
                 _isLoading.value = false
-                println("Chargement du batiment terminé")
+                println("Chargement du sport terminé")
             }
         }
     }
 
-}
+    fun addSport(sport: Sport) {
+        viewModelScope.launch {
+            _isLoading.value = true
+            try {
+
+                // Envoi à l'API (ici, un POST)
+                val response = RetrofitInstance.api.addSport(sport)
+                if (response.isSuccessful) {
+                    // Ajout réussi, on met à jour la liste des bâtiments
+                    getSports() // Recharge les sports pour inclure le nouveau
+                } else {
+                    _errorMessage.value = "Erreur lors de l'ajout du sport : ${response.message()}"
+                }
+            } catch (e: Exception) {
+                _errorMessage.value = "Erreur : ${e.message}"
+            } finally {
+                _isLoading.value = false
+            }
+        }
+    }
+            }
+
