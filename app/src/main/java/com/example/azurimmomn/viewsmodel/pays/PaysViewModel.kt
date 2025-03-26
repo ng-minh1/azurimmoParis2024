@@ -24,7 +24,7 @@ class PaysViewModel : ViewModel() {
     }
 
 
-    private fun getPays() {
+     fun getPays() {
         viewModelScope.launch {
             _isLoading.value = true
             _errorMessage.value = null  // Réinitialise l'erreur avant l'appel
