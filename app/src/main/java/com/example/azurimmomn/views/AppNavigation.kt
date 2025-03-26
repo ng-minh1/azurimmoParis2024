@@ -12,6 +12,7 @@ import com.example.azurimmomn.views.epreuve.EpreuveList
 import com.example.azurimmomn.views.pays.PaysList
 import com.example.azurimmomn.views.sport.SportList
 import com.example.azurimmomn.views.joueur.JoueurList
+import com.example.azurimmomn.views.sport.SportAdd
 
 
 @Composable
@@ -41,6 +42,9 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier = Modifie
         }
         composable("sports_list") {
             SportList(navController = navController)
+        }
+        composable("add_sport") {
+            SportAdd(navController = navController)
         }
         composable("joueurs_list") {
             JoueurList()
