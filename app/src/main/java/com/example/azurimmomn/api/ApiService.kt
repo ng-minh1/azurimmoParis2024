@@ -6,11 +6,12 @@ import com.example.azurimmomn.model.Epreuve
 import com.example.azurimmomn.model.Pays
 import com.example.azurimmomn.model.Sport
 import com.example.azurimmomn.model.Joueur
-
+import retrofit2.http.Body
 
 
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.POST
 
 
 interface ApiService {
@@ -37,5 +38,8 @@ interface ApiService {
 
     @GET("/sport/{id}")
     suspend fun getSport(@Path("id") id: Int): retrofit2.Response<Sport>
+
+    @POST("/sport")
+    suspend fun addSport(@Body sport: Sport): retrofit2.Response<Sport>
 
 }
