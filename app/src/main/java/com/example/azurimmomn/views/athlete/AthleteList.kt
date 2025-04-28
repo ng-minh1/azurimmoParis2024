@@ -86,12 +86,12 @@ fun AthleteList(
                                 )
                                 Spacer(modifier = Modifier.height(8.dp))
                                 Text(
-                                    text = "Adresse : ${sport?.nom ?: "Non défini"}",
+                                    text = "Nom du sport : ${sport?.nom ?: "Non défini"}",
                                     style = MaterialTheme.typography.bodyLarge,
                                     color = MaterialTheme.colorScheme.onSurface
                                 )
                                 Text(
-                                    text = "Ville : ${sport?.descriptif ?: "Non défini"}",
+                                    text = "Description : ${sport?.descriptif ?: "Non défini"}",
                                     style = MaterialTheme.typography.bodyMedium,
                                     color = MaterialTheme.colorScheme.onSurface
                                 )
