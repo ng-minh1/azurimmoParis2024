@@ -18,7 +18,7 @@ object RetrofitInstance {
         .registerTypeAdapter(LocalDate::class.java, localDateTypeAdapter)
         .create()
 
-    private const val BASE_URL = "http://10.0.2.2:9005"
+    private const val BASE_URL = "http://172.20.177.251:8080/minhtriparis2024api/"
     val api: ApiService by lazy {
         Retrofit.Builder()
             .baseUrl(BASE_URL)
