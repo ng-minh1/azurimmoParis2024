@@ -7,11 +7,10 @@ import com.example.azurimmomn.model.Pays
 import com.example.azurimmomn.model.Sport
 import com.example.azurimmomn.model.Joueur
 import retrofit2.http.Body
-
-
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.POST
+import retrofit2.http.PUT
 
 
 interface ApiService {
@@ -42,4 +41,7 @@ interface ApiService {
     @POST("sport")
     suspend fun addSport(@Body sport: Sport): retrofit2.Response<Sport>
 
+    // Nouvelle méthode pour la mise à jour d'un sport
+    @PUT("sport/{id}")
+    suspend fun updateSport(@Path("id") id: Int, @Body sport: Sport): retrofit2.Response<Sport>
 }

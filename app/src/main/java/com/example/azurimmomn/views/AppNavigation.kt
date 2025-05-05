@@ -13,6 +13,9 @@ import com.example.azurimmomn.views.pays.PaysList
 import com.example.azurimmomn.views.sport.SportList
 import com.example.azurimmomn.views.joueur.JoueurList
 import com.example.azurimmomn.views.sport.SportAdd
+import com.example.azurimmomn.views.sport.SportEditForm
+import android.os.Build
+import androidx.annotation.RequiresApi
 
 
 @Composable
@@ -48,6 +51,16 @@ fun AppNavigation(navController: NavHostController, modifier: Modifier = Modifie
         }
         composable("joueurs_list") {
             JoueurList()
+        }
+
+        // Route pour modifier un sport
+        composable("edit_sport/{sportId}") { backStackEntry ->
+            val sportId = backStackEntry.arguments?.getString("sportId")?.toIntOrNull() ?: 0
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                SportEditForm(sportId = sportId, navController = navController)
+            } else {
+                Text("Fonctionnalité non disponible sur cette version d'Android")
+            }
         }
     }
 }
